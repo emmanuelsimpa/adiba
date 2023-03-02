@@ -6715,7 +6715,7 @@ __webpack_require__.r(__webpack_exports__);
 var URL = "https://gw1.api.adiba.app/backoffice/v1/admin/opportunities/";
 var LOGIN_URL = URL + "users/login";
 var REGISTER_URL = URL + "signup";
-var REQUEST_PASSWORD_URL = URL + "api/auth/forgot-password";
+var REQUEST_PASSWORD_URL = URL + "admin/members/password/reset";
 var ME_URL = URL + "user/profile";
 function logins(data) {
   return axios__WEBPACK_IMPORTED_MODULE_0__["default"].post(LOGIN_URL, data);
@@ -6744,10 +6744,10 @@ function changePassword(body) {
   return axios__WEBPACK_IMPORTED_MODULE_0__["default"].post(URL + "auth/user/change_pass", body);
 }
 function request_license(body) {
-  return axios__WEBPACK_IMPORTED_MODULE_0__["default"].post("https://gw1.api.adiba.app/backoffice/v1/admin/opportunities", body);
+  return axios__WEBPACK_IMPORTED_MODULE_0__["default"].post("".concat(URL, "admin/opportunities"), body);
 }
 function refresh_token() {
-  return axios__WEBPACK_IMPORTED_MODULE_0__["default"].post(URL + "auth/refresh-token", {});
+  return axios__WEBPACK_IMPORTED_MODULE_0__["default"].post(URL + "admin/members/refresh", {});
 }
 function getUserByToken() {
   return axios__WEBPACK_IMPORTED_MODULE_0__["default"].get(ME_URL);
@@ -14465,12 +14465,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Summary__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Summary */ "./src/member/forms/Summary.tsx");
 /* harmony import */ var _Administrator__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Administrator */ "./src/member/forms/Administrator.tsx");
 /* harmony import */ var _BusinessEntity__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./BusinessEntity */ "./src/member/forms/BusinessEntity.tsx");
+/* harmony import */ var react_router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-router */ "./node_modules/react-router/esm/react-router.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
 function _iterableToArrayLimit(arr, i) { var _i = null == arr ? null : "undefined" != typeof Symbol && arr[Symbol.iterator] || arr["@@iterator"]; if (null != _i) { var _s, _e, _x, _r, _arr = [], _n = !0, _d = !1; try { if (_x = (_i = _i.call(arr)).next, 0 === i) { if (Object(_i) !== _i) return; _n = !1; } else for (; !(_n = (_s = _x.call(_i)).done) && (_arr.push(_s.value), _arr.length !== i); _n = !0); } catch (err) { _d = !0, _e = err; } finally { try { if (!_n && null != _i["return"] && (_r = _i["return"](), Object(_r) !== _r)) return; } finally { if (_d) throw _e; } } return _arr; } }
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
 
 
 
@@ -14499,8 +14501,10 @@ function SignUpWizard() {
     _useState4 = _slicedToArray(_useState3, 2),
     data = _useState4[0],
     setData = _useState4[1];
+  var history = (0,react_router__WEBPACK_IMPORTED_MODULE_6__.useHistory)();
   var makeRequest = function makeRequest(data) {
     console.log("final", data);
+    history.push("/dashboard");
   };
   var handleNextStep = function handleNextStep(newData) {
     var _final = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
@@ -21764,13 +21768,13 @@ module.exports.showProblems = showProblems;
 
 /***/ }),
 
-/***/ "./node_modules/piral-cli-webpack5/src/webpack-hot-middleware/client.js?path=http://localhost:62123/__webpack_hmr&reload=true":
+/***/ "./node_modules/piral-cli-webpack5/src/webpack-hot-middleware/client.js?path=http://localhost:52883/__webpack_hmr&reload=true":
 /*!************************************************************************************************************************************!*\
-  !*** ./node_modules/piral-cli-webpack5/src/webpack-hot-middleware/client.js?path=http://localhost:62123/__webpack_hmr&reload=true ***!
+  !*** ./node_modules/piral-cli-webpack5/src/webpack-hot-middleware/client.js?path=http://localhost:52883/__webpack_hmr&reload=true ***!
   \************************************************************************************************************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-var __resourceQuery = "?path=http://localhost:62123/__webpack_hmr&reload=true";
+var __resourceQuery = "?path=http://localhost:52883/__webpack_hmr&reload=true";
 /* module decorator */ module = __webpack_require__.nmd(module);
 /*eslint-env browser*/
 /*global __resourceQuery __webpack_public_path__*/
@@ -25372,7 +25376,7 @@ function installPiralDebug(options) {
             dependencies: "tslib,react,react-dom,react-router,react-router-dom",
         },
         build: {
-            date: "2023-02-27T08:04:43.086Z",
+            date: "2023-03-02T15:46:19.254Z",
             cli: "0.15.7",
             compat: "0.15",
         },
@@ -87527,7 +87531,7 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("73fc7ce876df092cb76b")
+/******/ 		__webpack_require__.h = () => ("b4f71799cf114c381725")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
@@ -88623,7 +88627,7 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 	// module cache are used so entry inlining is disabled
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
-/******/ 	__webpack_require__("./node_modules/piral-cli-webpack5/src/webpack-hot-middleware/client.js?path=http://localhost:62123/__webpack_hmr&reload=true");
+/******/ 	__webpack_require__("./node_modules/piral-cli-webpack5/src/webpack-hot-middleware/client.js?path=http://localhost:52883/__webpack_hmr&reload=true");
 /******/ 	__webpack_require__("./src/style.css");
 /******/ 	var __webpack_exports__ = __webpack_require__("./src/index.tsx");
 /******/ 	

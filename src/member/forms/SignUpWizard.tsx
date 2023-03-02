@@ -6,6 +6,7 @@ import { SignUpSteps } from "../../_app/shared/member/SignUpSteps";
 import Summary from "./Summary";
 import Administrator from "./Administrator";
 import BusinessEntity from "./BusinessEntity";
+import { useHistory } from "react-router";
 
 function SignUpWizard() {
   const [currentStep, setCurrentStep] = useState(0);
@@ -23,8 +24,10 @@ function SignUpWizard() {
     business_url: "",
   });
 
+  const history = useHistory();
   const makeRequest = (data) => {
     console.log("final", data);
+    history.push("/dashboard");
   };
 
   const handleNextStep = (newData, final = false) => {
