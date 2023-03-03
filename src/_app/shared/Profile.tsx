@@ -3,10 +3,11 @@ import { Fragment } from "react";
 import { Menu, Transition } from "@headlessui/react";
 import { LinkIcon } from "@heroicons/react/20/solid";
 import { classNames } from "./utils/className";
+import { useHistory } from "react-router";
 // import { useNavigate } from "react-router-dom";
 
 export default function Profile() {
-  // let navigate = useNavigate();
+  const history = useHistory();
   return (
     <div>
       <div className='pb-1 sm:pb-6'>
@@ -33,14 +34,14 @@ export default function Profile() {
               </div>
               <div className='mt-5 flex flex-wrap space-y-3 sm:space-y-0 sm:space-x-3'>
                 <button
-                  onClick={() => (location.href = "/settings")}
+                  onClick={() => history.push("/settings")}
                   type='button'
                   className='inline-flex w-full flex-shrink-0 items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:flex-1'
                 >
                   Profile
                 </button>
                 <button
-                  onClick={() => (location.href = "/login")}
+                  onClick={() => history.push("/login")}
                   type='button'
                   className='inline-flex w-full flex-1 items-center justify-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2'
                 >
