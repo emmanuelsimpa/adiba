@@ -27,7 +27,7 @@ export default function Sidebar() {
       });
   }, []);
 
-  console.log("ln 30", result);
+  // console.log("ln 30", result);
   return (
     <div className='hidden md:fixed md:inset-y-0 md:flex md:w-64 md:flex-col'>
       {/* Sidebar component, swap this element with another sidebar if you like */}

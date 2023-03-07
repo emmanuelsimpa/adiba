@@ -11,6 +11,8 @@ import * as _redux from "./redux";
 import axios from "axios";
 import { PersistGate } from "redux-persist/integration/react";
 import Loading from "./_app/shared/MasterLayout/components/loader/Loading";
+import { Landing } from "./_app/shared/components/layouts/landing";
+import MasterLayout from "./_app/shared/MasterLayout/MasterLayout";
 
 // change to your feed URL here (either using feed.piral.cloud or your own service)
 // const feedUrl = "https://feed.piral.cloud/api/v1/pilet/empty";

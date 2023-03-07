@@ -1,10 +1,7 @@
 import * as React from "react";
-import { Fragment } from "react";
 import { Menu, Transition } from "@headlessui/react";
 import { LinkIcon } from "@heroicons/react/20/solid";
-import { classNames } from "./utils/className";
 import { useHistory } from "react-router";
-// import { useNavigate } from "react-router-dom";
 
 export default function Profile() {
   const history = useHistory();

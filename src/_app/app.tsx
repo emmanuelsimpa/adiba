@@ -1,5 +1,5 @@
 import { startLoadingPilets } from "piral-base";
-import { PiletApi } from "piral-core";
+import { PiletApi, SetRoute } from "piral-core";
 import * as React from "react";
 import Forgotpassword from "../member/forgotpassword";
 import SignIn from "../member/login";
@@ -11,6 +11,7 @@ import MasterLayout from "./shared/MasterLayout/MasterLayout";
 import UserMgtForm from "./shared/member/UserMgtForm";
 
 export function setupShell(app: PiletApi) {
+  console.log("meta", app.meta);
   //   LAYOUTS REGISTRATION
   app.registerPageLayout("dashboard", ({ children }) => (
     <MasterLayout content={children} />
@@ -50,7 +51,6 @@ export function setupShell(app: PiletApi) {
       }
     />
   ));
-  // app.registerPage("/", Landing);
   app.registerPage("/login", SignIn, {
     layout: "member-login",
   });

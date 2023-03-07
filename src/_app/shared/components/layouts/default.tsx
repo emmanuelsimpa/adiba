@@ -1,12 +1,8 @@
 import * as React from "react";
 import { Link } from "react-router-dom";
-import {
-  ComponentsState,
-  ErrorComponentsState,
-  Notifications,
-  SwitchErrorInfo,
-} from "piral";
+import { ComponentsState, ErrorComponentsState, SwitchErrorInfo } from "piral";
 import Landing from "../../../../landing";
+import Switching from "../../../routes";
 
 export const errors: Partial<ErrorComponentsState> = {
   not_found: () => (
@@ -22,20 +18,19 @@ export const errors: Partial<ErrorComponentsState> = {
 };
 
 export const layout: Partial<ComponentsState> = {
+  LoadingIndicator: () => <div>I'm Loading...</div>,
   ErrorInfo: (props) => (
     <div>
       <h1>Error</h1>
       <SwitchErrorInfo {...props} />
     </div>
   ),
-  DashboardContainer: ({ children }) => {
+  DashboardContainer: () => {
     return <Landing />;
-    // return<MasterLayout content={children} />
   },
+  // Layout: Switching,
   Layout: ({ children }) => (
     <div>
-      <Notifications />
-      {/* <Menu type='general' /> */}
       <div>{children}</div>
     </div>
   ),

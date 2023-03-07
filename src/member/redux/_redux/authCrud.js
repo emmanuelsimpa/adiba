@@ -1,8 +1,6 @@
 import axios from "axios";
 
-// export const URL = "http://localhost:3112/";
-export const URL =
-  "https://gw1.api.adiba.app/backoffice/v1/admin/opportunities/";
+export const URL = "http://localhost:3112/";
 export const LOGIN_URL = URL + "users/login";
 export const REGISTER_URL = URL + "signup";
 export const REQUEST_PASSWORD_URL = URL + "admin/members/password/reset";
